@@ -1,4 +1,5 @@
-﻿using gestion_commercial.models;
+﻿using gestion_commercial.dto;
+using gestion_commercial.models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -56,12 +57,20 @@ namespace gestion_commercial.dao
         public int update(Produit produit)
         {
             string sql = string.Format("update produit set libelle='{0}'," +
-                            " stock={1},prix={2}, " +    
-                            " id_sous_categorie={3},image=@avatar", 
+                            " stock={1},prix={2}, " +
+                            " id_sous_categorie={3},image=@avatar where id={4}", 
                                 produit.Libelle, produit.QteStock,
                                 produit.Prix,
-                                produit.SousCategorie.Id);
+                                produit.SousCategorie.Id,
+                                produit.Id);
             return executeUpdate(sql, produit.Image);
+        }
+        public int update(ProduitDto produit)
+        {
+            string sql = string.Format("update produit set stock={0} where id={1}",
+                                produit.QteStock,produit.Id);
+                            
+            return executeUpdate(sql);
         }
     }
 }

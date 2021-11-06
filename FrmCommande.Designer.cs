@@ -41,22 +41,18 @@ namespace gestion_commercial
             this.label1 = new System.Windows.Forms.Label();
             this.txtbNomPrenom = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.btnSaveCommande = new System.Windows.Forms.Button();
+            this.txtbTotalCmde = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qte_Com = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgvProduitsCmdes = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.grpBoxProduit = new System.Windows.Forms.GroupBox();
+            this.btnAddDetailsCmd = new System.Windows.Forms.Button();
+            this.txtMntCmdProduit = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtbCmdPrix = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCmdQteCom = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtbCmdQteStock = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,13 +67,17 @@ namespace gestion_commercial
             this.txtbCmdNomComplet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtbCmdTel = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qte_Com = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProduitsCmdes)).BeginInit();
+            this.grpBoxProduit.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,11 +201,11 @@ namespace gestion_commercial
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.btnSaveCommande);
+            this.groupBox2.Controls.Add(this.txtbTotalCmde);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Controls.Add(this.grpBoxProduit);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,17 +216,32 @@ namespace gestion_commercial
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Faire une  Commande";
             // 
-            // textBox10
+            // btnSaveCommande
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(97, 492);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(149, 26);
-            this.textBox10.TabIndex = 26;
+            this.btnSaveCommande.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnSaveCommande.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveCommande.ForeColor = System.Drawing.Color.White;
+            this.btnSaveCommande.Location = new System.Drawing.Point(546, 487);
+            this.btnSaveCommande.Name = "btnSaveCommande";
+            this.btnSaveCommande.Size = new System.Drawing.Size(117, 32);
+            this.btnSaveCommande.TabIndex = 14;
+            this.btnSaveCommande.Text = "Enregistrer";
+            this.btnSaveCommande.UseVisualStyleBackColor = false;
+            this.btnSaveCommande.Click += new System.EventHandler(this.btnSaveCommande_Click);
+            // 
+            // txtbTotalCmde
+            // 
+            this.txtbTotalCmde.Enabled = false;
+            this.txtbTotalCmde.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTotalCmde.ForeColor = System.Drawing.Color.Red;
+            this.txtbTotalCmde.Location = new System.Drawing.Point(97, 492);
+            this.txtbTotalCmde.Name = "txtbTotalCmde";
+            this.txtbTotalCmde.Size = new System.Drawing.Size(149, 29);
+            this.txtbTotalCmde.TabIndex = 26;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.dtgvProduitsCmdes);
             this.groupBox5.Location = new System.Drawing.Point(19, 291);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(644, 183);
@@ -234,47 +249,20 @@ namespace gestion_commercial
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Produits Commandés";
             // 
-            // dataGridView1
+            // dtgvProduitsCmdes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvProduitsCmdes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvProduitsCmdes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Libelle,
             this.Prix,
             this.Qte_Com,
             this.Montant});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(638, 158);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Libelle
-            // 
-            this.Libelle.HeaderText = "Libelle";
-            this.Libelle.Name = "Libelle";
-            // 
-            // Prix
-            // 
-            this.Prix.HeaderText = "Prix";
-            this.Prix.Name = "Prix";
-            // 
-            // Qte_Com
-            // 
-            this.Qte_Com.HeaderText = "Quantité Commandée";
-            this.Qte_Com.Name = "Qte_Com";
-            this.Qte_Com.Width = 150;
-            // 
-            // Montant
-            // 
-            this.Montant.HeaderText = "Montant";
-            this.Montant.Name = "Montant";
-            this.Montant.Width = 140;
+            this.dtgvProduitsCmdes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvProduitsCmdes.Location = new System.Drawing.Point(3, 22);
+            this.dtgvProduitsCmdes.Name = "dtgvProduitsCmdes";
+            this.dtgvProduitsCmdes.Size = new System.Drawing.Size(638, 158);
+            this.dtgvProduitsCmdes.TabIndex = 0;
             // 
             // label13
             // 
@@ -285,52 +273,54 @@ namespace gestion_commercial
             this.label13.TabIndex = 25;
             this.label13.Text = "Total";
             // 
-            // groupBox4
+            // grpBoxProduit
             // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.textBox9);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.txtbCmdPrix);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.txtbCmdQteStock);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.txtbCmdLibelle);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.txtbCmdReference);
-            this.groupBox4.Location = new System.Drawing.Point(22, 140);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(644, 147);
-            this.groupBox4.TabIndex = 20;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Données Produit";
+            this.grpBoxProduit.Controls.Add(this.btnAddDetailsCmd);
+            this.grpBoxProduit.Controls.Add(this.txtMntCmdProduit);
+            this.grpBoxProduit.Controls.Add(this.label12);
+            this.grpBoxProduit.Controls.Add(this.txtbCmdPrix);
+            this.grpBoxProduit.Controls.Add(this.label11);
+            this.grpBoxProduit.Controls.Add(this.txtCmdQteCom);
+            this.grpBoxProduit.Controls.Add(this.label10);
+            this.grpBoxProduit.Controls.Add(this.txtbCmdQteStock);
+            this.grpBoxProduit.Controls.Add(this.label7);
+            this.grpBoxProduit.Controls.Add(this.label8);
+            this.grpBoxProduit.Controls.Add(this.txtbCmdLibelle);
+            this.grpBoxProduit.Controls.Add(this.label9);
+            this.grpBoxProduit.Controls.Add(this.txtbCmdReference);
+            this.grpBoxProduit.Location = new System.Drawing.Point(22, 140);
+            this.grpBoxProduit.Name = "grpBoxProduit";
+            this.grpBoxProduit.Size = new System.Drawing.Size(644, 147);
+            this.grpBoxProduit.TabIndex = 20;
+            this.grpBoxProduit.TabStop = false;
+            this.grpBoxProduit.Text = "Données Produit";
             // 
-            // button3
+            // btnAddDetailsCmd
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(122)))), ((int)(((byte)(139)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(560, 110);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 30);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "ADD";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAddDetailsCmd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(122)))), ((int)(((byte)(139)))));
+            this.btnAddDetailsCmd.Enabled = false;
+            this.btnAddDetailsCmd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDetailsCmd.ForeColor = System.Drawing.Color.White;
+            this.btnAddDetailsCmd.Location = new System.Drawing.Point(560, 110);
+            this.btnAddDetailsCmd.Name = "btnAddDetailsCmd";
+            this.btnAddDetailsCmd.Size = new System.Drawing.Size(75, 30);
+            this.btnAddDetailsCmd.TabIndex = 14;
+            this.btnAddDetailsCmd.Text = "ADD";
+            this.btnAddDetailsCmd.UseVisualStyleBackColor = false;
+            this.btnAddDetailsCmd.Click += new System.EventHandler(this.btnAddDetails_Click);
             // 
-            // textBox9
+            // txtMntCmdProduit
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(463, 97);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(64, 26);
-            this.textBox9.TabIndex = 24;
+            this.txtMntCmdProduit.Enabled = false;
+            this.txtMntCmdProduit.Location = new System.Drawing.Point(477, 61);
+            this.txtMntCmdProduit.Name = "txtMntCmdProduit";
+            this.txtMntCmdProduit.Size = new System.Drawing.Size(158, 26);
+            this.txtMntCmdProduit.TabIndex = 24;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(459, 64);
+            this.label12.Location = new System.Drawing.Point(473, 27);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(68, 20);
             this.label12.TabIndex = 23;
@@ -353,12 +343,13 @@ namespace gestion_commercial
             this.label11.TabIndex = 21;
             this.label11.Text = "Qte Commandée";
             // 
-            // textBox7
+            // txtCmdQteCom
             // 
-            this.textBox7.Location = new System.Drawing.Point(355, 98);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(80, 26);
-            this.textBox7.TabIndex = 20;
+            this.txtCmdQteCom.Location = new System.Drawing.Point(355, 98);
+            this.txtCmdQteCom.Name = "txtCmdQteCom";
+            this.txtCmdQteCom.Size = new System.Drawing.Size(80, 26);
+            this.txtCmdQteCom.TabIndex = 20;
+            this.txtCmdQteCom.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCmdQteCom_KeyUp);
             // 
             // label10
             // 
@@ -487,17 +478,37 @@ namespace gestion_commercial
             this.txtbCmdTel.TabIndex = 14;
             this.txtbCmdTel.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCmdTel_KeyUp);
             // 
-            // button1
+            // ID
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(546, 487);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 32);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Enregistrer";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Libelle
+            // 
+            this.Libelle.DataPropertyName = "Libelle";
+            this.Libelle.HeaderText = "Libelle";
+            this.Libelle.Name = "Libelle";
+            // 
+            // Prix
+            // 
+            this.Prix.DataPropertyName = "Prix";
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            // 
+            // Qte_Com
+            // 
+            this.Qte_Com.DataPropertyName = "QteComd";
+            this.Qte_Com.HeaderText = "Quantité Commandée";
+            this.Qte_Com.Name = "Qte_Com";
+            this.Qte_Com.Width = 150;
+            // 
+            // Montant
+            // 
+            this.Montant.DataPropertyName = "MntStock";
+            this.Montant.HeaderText = "Montant";
+            this.Montant.Name = "Montant";
+            this.Montant.Width = 140;
             // 
             // FrmCommande
             // 
@@ -516,9 +527,9 @@ namespace gestion_commercial
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProduitsCmdes)).EndInit();
+            this.grpBoxProduit.ResumeLayout(false);
+            this.grpBoxProduit.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -542,22 +553,17 @@ namespace gestion_commercial
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtbCmdTel;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtbTotalCmde;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Libelle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qte_Com;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Montant;
+        private System.Windows.Forms.DataGridView dtgvProduitsCmdes;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.GroupBox grpBoxProduit;
+        private System.Windows.Forms.Button btnAddDetailsCmd;
+        private System.Windows.Forms.TextBox txtMntCmdProduit;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtbCmdPrix;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCmdQteCom;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtbCmdQteStock;
         private System.Windows.Forms.Label label7;
@@ -569,6 +575,11 @@ namespace gestion_commercial
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtbCmdAdresse;
         private System.Windows.Forms.TextBox txtbCmdNomComplet;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveCommande;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Libelle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qte_Com;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Montant;
     }
 }

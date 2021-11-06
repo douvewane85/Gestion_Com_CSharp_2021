@@ -64,6 +64,8 @@
     <Compile Include="dao\IRole.cs" />
     <Compile Include="dao\ISousCategorie.cs" />
     <Compile Include="dao\IUserDao.cs" />
+    <Compile Include="dto\IDto.cs" />
+    <Compile Include="dto\ProduitDto.cs" />
     <Compile Include="fabrique\Fabrique.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

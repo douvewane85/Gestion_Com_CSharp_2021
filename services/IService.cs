@@ -1,4 +1,5 @@
-﻿using gestion_commercial.models;
+﻿using gestion_commercial.dto;
+using gestion_commercial.models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,7 +28,7 @@ namespace gestion_commercial.services
               DataTable showAllProduits();
               DataTable searchClientByNumero(string numero);
               DataTable searchProduitByReference(string reference);
-              int addCommande(Commande commande, List<Produit> produits,Client client);
+              int addCommande(Commande commande, List<ProduitDto> produits,Client client);
               List<Commande> showAllCommandes(DateTime date=default(DateTime));
               List<Commande> showAllCommandes(DateTime date,Statut etat);
               List<Commande> showAllCommandes(DateTime date, Statut etat,Client client);

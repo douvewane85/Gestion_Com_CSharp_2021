@@ -26,5 +26,16 @@ namespace gestion_commercial.utils
             }
 
         }
+
+        public  static void clearFieds(GroupBox groupBox)
+        {
+            foreach(var control in groupBox.Controls)
+            {
+                if( control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+            }
+        }
     }
 }

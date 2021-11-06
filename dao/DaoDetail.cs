@@ -25,9 +25,12 @@ namespace gestion_commercial.dao
             throw new NotImplementedException();
         }
 
-        public int insert(DetailCommande obj)
+        public int insert(DetailCommande detail)
         {
-            throw new NotImplementedException();
+            string sql = string.Format("insert into detail(produit_id,commande_id,qte_com) " +
+                                          " values ({0},{1},{2})",
+                                          detail.Produit.Id,detail.Commande.Id,detail.QteCom);
+            return executeUpdate(sql);
         }
 
         public int update(DetailCommande obj)

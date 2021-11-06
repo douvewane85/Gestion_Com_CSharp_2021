@@ -1,4 +1,5 @@
 ﻿using gestion_commercial.dao;
+using gestion_commercial.dto;
 using gestion_commercial.models;
 using System;
 using System.Collections.Generic;
@@ -45,9 +46,26 @@ namespace gestion_commercial.services
         public IDetailDao DetailDao { get => detailDao; set => detailDao = value; }
         public ISousCategorie SousCatDao { get => sousCatDao; set => sousCatDao = value; }
 
-        public int addCommande(Commande commande, List<Produit> produits, Client client)
+        public int addCommande(Commande commande, List<ProduitDto> produits, Client client)
         {
-            throw new NotImplementedException();
+            commande.Client = client;
+            int idCmde = CmdeDao.insert(commande);
+            foreach (var produitDto in produits)
+            {
+                DetailCommande detail = new DetailCommande()
+                {
+                   Produit= produitDto.dtoToModel(),
+                   Commande=new Commande() {Id= idCmde},
+                   QteCom= produitDto.QteComd
+                };
+                if (DetailDao.insert(detail) != 0)
+                {
+                    produitDto.QteStock -= produitDto.QteComd;
+                    ProduitDao.update(produitDto);
+                }
+            }
+
+            return idCmde;
         }
 
         public int addProduit(Produit produit)
