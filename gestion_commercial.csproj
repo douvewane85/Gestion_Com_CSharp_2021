@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D0A1C5A-1DB5-4590-87C7-5D93E4920D2D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>gestion_commercial</RootNamespace>
+    <AssemblyName>gestion_commercial</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dao\DaoClient.cs" />
+    <Compile Include="dao\DaoCommande.cs" />
+    <Compile Include="dao\DaoDetail.cs" />
+    <Compile Include="dao\DaoProduit.cs" />
+    <Compile Include="dao\DaoRole.cs" />
+    <Compile Include="dao\DaoSousCategorie.cs" />
+    <Compile Include="dao\DaoUser.cs" />
+    <Compile Include="dao\DaoUserJson.cs" />
+    <Compile Include="dao\Database.cs" />
+    <Compile Include="dao\IClient.cs" />
+    <Compile Include="dao\ICommande.cs" />
+    <Compile Include="dao\IDAO.cs" />
+    <Compile Include="dao\IDataBase.cs" />
+    <Compile Include="dao\IDetail.cs" />
+    <Compile Include="dao\IProduit.cs" />
+    <Compile Include="dao\IRole.cs" />
+    <Compile Include="dao\ISousCategorie.cs" />
+    <Compile Include="dao\IUserDao.cs" />
+    <Compile Include="fabrique\Fabrique.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCommande.Designer.cs">
+      <DependentUpon>FrmCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListeCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListeCommande.Designer.cs">
+      <DependentUpon>FrmListeCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduit.Designer.cs">
+      <DependentUpon>FrmProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduits.Designer.cs">
+      <DependentUpon>FrmProduits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Categorie.cs" />
+    <Compile Include="models\Client.cs" />
+    <Compile Include="models\Commande.cs" />
+    <Compile Include="models\DetailCommande.cs" />
+    <Compile Include="models\Produit.cs" />
+    <Compile Include="models\Role.cs" />
+    <Compile Include="models\SousCategorie.cs" />
+    <Compile Include="models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\IService.cs" />
+    <Compile Include="services\Service.cs" />
+    <Compile Include="utils\FormUtlis.cs" />
+    <Compile Include="utils\MyFile.cs" />
+    <Compile Include="utils\MyImage.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCommande.resx">
+      <DependentUpon>FrmCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListeCommande.resx">
+      <DependentUpon>FrmListeCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduit.resx">
+      <DependentUpon>FrmProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduits.resx">
+      <DependentUpon>FrmProduits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-macos-fermer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-produit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-produit1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\reference.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
