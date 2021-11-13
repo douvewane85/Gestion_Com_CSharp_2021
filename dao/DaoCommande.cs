@@ -42,8 +42,8 @@ namespace gestion_commercial.dao
 
         public int insert(Commande commande)
         {
-            string sql = string.Format("insert  into commande(date_cmde,total,statut,client_id) " +
-                                        " values ({0},{1},'Encours',{2})",
+            string sql = string.Format("insert  into commande(date_cmde,total,statut,client_id) OUTPUT INSERTED.ID  " +
+                                        " values ('{0}',{1},'Encours',{2})",
                                         DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), 
                                         commande.Total,
                                         commande.Client.Id);

@@ -22,6 +22,9 @@ namespace gestion_commercial
 
         }
 
-        
+        private void dtgvUtilisateurs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -269,6 +269,7 @@ namespace gestion_commercial
             this.dtgvUtilisateurs.Name = "dtgvUtilisateurs";
             this.dtgvUtilisateurs.Size = new System.Drawing.Size(674, 488);
             this.dtgvUtilisateurs.TabIndex = 0;
+            this.dtgvUtilisateurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvUtilisateurs_CellContentClick);
             // 
             // ID
             // 

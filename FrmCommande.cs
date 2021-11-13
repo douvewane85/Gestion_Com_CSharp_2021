@@ -167,5 +167,15 @@ namespace gestion_commercial
                 }
             }
         }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmCommande_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

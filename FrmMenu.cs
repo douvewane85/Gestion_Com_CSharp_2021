@@ -65,5 +65,13 @@ namespace gestion_commercial
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void lblListeCmde_Click(object sender, EventArgs e)
+        {
+            clearChildren();
+            FrmListeCommande frm = new FrmListeCommande();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

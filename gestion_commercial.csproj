@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +68,13 @@
     <Compile Include="dao\IUserDao.cs" />
     <Compile Include="dto\IDto.cs" />
     <Compile Include="dto\ProduitDto.cs" />
+    <Compile Include="entity\categorie.cs" />
+    <Compile Include="entity\commande.cs" />
+    <Compile Include="entity\Database.cs" />
+    <Compile Include="entity\detail.cs" />
+    <Compile Include="entity\produit.cs" />
+    <Compile Include="entity\role.cs" />
+    <Compile Include="entity\utilisateur.cs" />
     <Compile Include="fabrique\Fabrique.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -121,6 +130,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\IService.cs" />
     <Compile Include="services\Service.cs" />
+    <Compile Include="services\ServiceEF.cs" />
     <Compile Include="utils\FormUtlis.cs" />
     <Compile Include="utils\MyFile.cs" />
     <Compile Include="utils\MyImage.cs" />
@@ -182,6 +192,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\reference.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework.fr">
+      <Version>6.2.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,7 +27,7 @@ namespace gestion_commercial.dao
 
         public int insert(DetailCommande detail)
         {
-            string sql = string.Format("insert into detail(produit_id,commande_id,qte_com) " +
+            string sql = string.Format("insert into detail(produit_id,commande_id,qte_com) OUTPUT INSERTED.ID  " +
                                           " values ({0},{1},{2})",
                                           detail.Produit.Id,detail.Commande.Id,detail.QteCom);
             return executeUpdate(sql);

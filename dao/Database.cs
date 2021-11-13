@@ -75,9 +75,9 @@ namespace gestion_commercial.dao
                     cmd.Parameters.AddWithValue("@avatar", SqlDbType.Image).Value = image;
                 } 
             if (sql.ToLower().StartsWith("insert")){  
-
                 //requete insert
-                result = Convert.ToInt32(cmd.ExecuteScalar());
+                  result = Convert.ToInt32(cmd.ExecuteScalar());
+
                }
                 else{
                 //requete delete ou update
